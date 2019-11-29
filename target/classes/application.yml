@@ -1,0 +1,37 @@
+app:
+  name: /springBootMysql
+
+server:
+  port: 8888
+  servlet:
+    context-path: /springBootMysql
+
+spring:
+  datasource:
+    #mysql的配置参数
+    #url: jdbc:mysql://localhost:3306/test?serverTimezone=Asia/Shanghai&allowMultiQueries=true
+    #username: root
+    #password: root
+    #driver-class-name: com.mysql.jdbc.Driver
+
+
+    #oracle的数据库配置参数
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@//127.0.0.1:1521/ora10
+    username: dbsjgx
+    password: dbsjgx
+
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+
+
+mybatis:  #mybatyis的配置
+  mapper-locations: classpath:mapper/*.xml #指定mapper的配置文件的路径是mapper文件夹下的所有 xml文件
+  type-aliases-package: com.example.bean
+
+
+logging:
+  config: classpath:logback-spring.xml
+  path: ../nmyslog/nmys

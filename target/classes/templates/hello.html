@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="test.css" type="text/css" />
+
+    <script type="text/javascript" src="common/jquery-3.3.1.js"></script>
+        <script type="text/javascript">
+
+        $.ajax({
+            type:"post",
+            url:"../getData",
+            dataType:"*",
+            data:'',
+            success:function(data){
+                console.log(data)
+        },
+        error:function(e)
+        {
+            console.log(data);
+        }
+        });
+    </script>
+</head>
+    <body>
+                <h1>Hello 44444444444</h1>
+    </body>
+</html>

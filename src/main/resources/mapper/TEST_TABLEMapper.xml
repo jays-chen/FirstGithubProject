@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dao.TEST_TABLEMapper">
+  <resultMap id="BaseResultMap" type="com.example.bean.TEST_TABLE">
+    <id column="RWID" jdbcType="VARCHAR" property="rwid" />
+    <result column="RWMC" jdbcType="VARCHAR" property="rwmc" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from TEST_TABLE
+    where RWID = #{rwid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.example.bean.TEST_TABLE">
+    insert into TEST_TABLE (RWID, RWMC)
+    values (#{rwid,jdbcType=VARCHAR}, #{rwmc,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.example.bean.TEST_TABLE">
+    update TEST_TABLE
+    set RWMC = #{rwmc,jdbcType=VARCHAR}
+    where RWID = #{rwid,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select RWID, RWMC
+    from TEST_TABLE
+    where RWID = #{rwid,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select RWID, RWMC
+    from TEST_TABLE
+  </select>
+
+
+</mapper>
